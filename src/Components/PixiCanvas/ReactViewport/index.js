@@ -6,7 +6,7 @@ export default PixiComponent("Viewport", {
     const viewport = new Viewport({
         screenWidth: window.innerWidth,
         screenHeight: window.innerHeight,
-    });
+    })
 
     viewport.wheel({
         center: {
@@ -14,7 +14,8 @@ export default PixiComponent("Viewport", {
             y:window.innerHeight/2
         }
     })
-    viewport.on("wheel", e=> {
+
+    viewport.on("wheel", e => {
         if (e.viewport.scaled <= 0.5){
             viewport.setZoom(0.5, true)
         }
@@ -22,8 +23,8 @@ export default PixiComponent("Viewport", {
         if (e.viewport.scaled >= 2){
             viewport.setZoom(2, true)
         }
-    });
+    })
 
-    return viewport;
+    return viewport
   }
-});
+})

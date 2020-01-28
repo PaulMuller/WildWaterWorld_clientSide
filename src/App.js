@@ -1,68 +1,60 @@
-import React, {useState, useEffect} from 'react';
-import Ping from './Components/Ping/Ping.js';
-import PixiCanvas from './Components/PixiCanvas/PixiCanvas.js';
-import socketIoClient from 'socket.io-client';
-import config from "./config.json";
-const io = socketIoClient(config.serverAddress);
+import React, {useState, useEffect} from 'react'
+import useInterval from 'use-interval'
+import Ping from './Components/Ping/Ping.js'
+import PixiCanvas from './Components/PixiCanvas/PixiCanvas.js'
+import socketIoClient from 'socket.io-client'
+import config from './config.json'
+const io = socketIoClient(config.serverAddress)
 
 export default () => {
-    const [player, setPlayer] = useState({
-        name: "Incognito",
-        ship: "boat_lvl1",
-        x:0,
-        y:0, 
-        rotation: 0, 
-        viewRadius:500
-    });
+    const [playerConsts, setPlayerConsts] = useState([
+        'TUFEL9h9zN8KNMwRgcTxd9jDXUU3E8Kwbx',
+        'boat_lvl1'
+    ])
+    const [playerState, setPlayerState] = useState([
+        0,
+        0, 
+        0, 
+        500
+    ])
+    const [otherVisiblePlayers, setOtherVisiblePlayers] = useState([])
 
-    const [otherVisiblePlayers, setOtherVisiblePlayers] = useState({});
-    const [islands, setIslands] = useState({});
-
-    // const [gameStatus, setGameStatus] = useState({
-    //     players: []
-    // });
-
-    useEffect(()=>{
-        io.on(2, (data) => {//playerUpdate
-            if (data.player == undefined) return;
-            setPlayer(data.player);
-            setOtherVisiblePlayers(data.otherVisiblePlayers)
-            setIslands(Object.assign({},data.islands));
+    useEffect(() => {
+        io.on(2, playerState => {
+            playerState = playerState.map(i => +i)
+            if (!playerState) return
+            setOtherVisiblePlayers(playerState[4] || [])
+            setPlayerState(playerState.slice(0, 4))
+            console.log(playerState)
         });
+    
+        (['keydown', 'keyup']).forEach( type => {
+            window.addEventListener(type, e => {
+                if (e.repeat) return
+                io.emit(3, [
+                    e.keyCode,
+                    e.type,
+                    e.ctrlKey,
+                    e.shiftKey,
+                    e.altKey
+                ])
+            })
+        })
+    }, [])
 
-        // io.on("_gameStatus", (data) => {
-        //     setGameStatus(data)
-        // });
+    
 
-        io.on("_otherPlayers", (data) => {
-            setOtherVisiblePlayers(data);
-        });
-
-        window.addEventListener('keydown', e => {
-            if (e.repeat) return;
-            const key = e.code;
-            io.emit(key + "_pressed");
-        });
-
-        window.addEventListener('keyup', e => {
-            if (e.repeat) return;
-            const key = e.code;
-            io.emit(key + "_released");
-        });
-    },[]);
-
-  
+    
 
 
     return (
         <>
-            <span>{Object.keys(otherVisiblePlayers).length + 1} ships, x:{player.x.toFixed(2)}/y:{player.y.toFixed(2)}</span>
+            <span>{otherVisiblePlayers.length + 1} ships, x:{playerState[0].toFixed(2)}/y:{playerState[1].toFixed(2)}</span>
             <Ping io={io}/>
             <PixiCanvas
-                player={player}
+                player={playerState}
                 otherVisiblePlayers={otherVisiblePlayers}
-                islands={islands}
             />
         </>
-    );
+    )
 }

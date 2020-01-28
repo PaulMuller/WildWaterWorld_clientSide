@@ -30,7 +30,7 @@ export default props => {
                 height={window.innerHeight*2}
                 x={-window.innerWidth/2}
                 y={-window.innerHeight/2}
-                tilePosition={{ x: -props.player.x, y: -props.player.y }}
+                tilePosition={{ x: -props.player[0], y: -props.player[1]}}
                 tileScale={{ x: 0.5, y: 0.5 }}
             />
                 {/* <TilingSprite
@@ -54,6 +54,6 @@ export default props => {
                 /> */}
 
         </>
-    );
+    )
 }
 

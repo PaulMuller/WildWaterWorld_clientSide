@@ -16,7 +16,7 @@ export default props => {
                 image={boat} 
                 x={window.innerWidth/2} 
                 y={window.innerHeight/2} 
-                rotation = {props.player.rotation} 
+                rotation = {props.player[2]} 
                 anchor={[0.5, 0.5]}
             />
         </>)
