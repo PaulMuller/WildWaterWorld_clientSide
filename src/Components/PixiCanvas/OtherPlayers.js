@@ -1,7 +1,6 @@
-import React from 'react';
-import {Sprite , AnimatedSprite, BitmapText} from '@inlet/react-pixi';
-import boat from '../../media/images/sprites/boat_lvl1.png';
-import world from './world.json';
+import React from 'react'
+import {Sprite} from '@inlet/react-pixi'
+import boat from '../../media/images/sprites/boat_lvl1.png'
 
 export default props => {
     return(
@@ -15,6 +14,6 @@ export default props => {
                     anchor={[0.5, 0.5]}
                 />
             ))}
-        </>)
-    ;
+        </>
+    )
 }

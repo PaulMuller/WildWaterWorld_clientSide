@@ -1,3 +1,6 @@
 {
-    "serverAddress": "http://127.0.0.1:5000"
+    "fullHost": "https://api.shasta.trongrid.io",
+    "serverAddress": "http://127.0.0.1:5000",
+    "WWT_management_contract_address": "TXL4yF5CJGzZyJkdAQ3NonmthcFGV1RWy4",
+    "ownerAddress": "TWK1STHv5qowAff39nDhB9KyeyBBLgkkMZ"
 }

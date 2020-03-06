@@ -4,21 +4,76 @@
     position: absolute;
     top: 8px;
     right: 16px;
+    color: rgb(20, 78, 5);
+}
+
+.playerLable {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    background-color:rgba(32, 25, 25, 0.548);
+    border-radius: 8px;
+    min-width: 1.8vh ;
+    padding: 3px;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8vh;
+}
+
+.loginForm  {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8vh;
+    text-align: left;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 20px;
+    width: 400px;
+    background-color:rgba(32, 25, 25, 0.897);
+    color: rgb(224, 224, 224);
+}
+
+.loginForm button {
+    background-color:rgba(255, 255, 255, 0.226);
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8vh;
+    width: 100%;
+}
+.loginForm input {
+    background-color:rgba(255, 255, 255, 0.815);
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    text-align: left;
+    text-decoration: none;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.8vh;
+    width: 100px;
+}
+
+button:hover {
+    background-color:rgb(255, 255, 255);
+}
+
+body {
+    margin: 0vh;
+    background-image: url('./media/images/sprites/back.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
     touch-action: none;
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
-    color: chartreuse;
+    overflow: hidden;
 }
 
-body {
-    background-image: url('./media/images/sprites/back1.jpg'), url('./media/images/sprites/back2.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left, right;
-  }
+
 
 Canvas {
     margin: 0;

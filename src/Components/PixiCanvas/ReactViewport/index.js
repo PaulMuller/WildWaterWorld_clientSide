@@ -1,5 +1,5 @@
-import { Viewport } from "pixi-viewport";
-import { PixiComponent } from "@inlet/react-pixi";
+import { Viewport } from "pixi-viewport"
+import { PixiComponent } from "@inlet/react-pixi"
 
 export default PixiComponent("Viewport", {
   create: props => {
@@ -23,6 +23,8 @@ export default PixiComponent("Viewport", {
         if (e.viewport.scaled >= 2){
             viewport.setZoom(2, true)
         }
+
+        props.setScaling(e.viewport.scaled)
     })
 
     return viewport
