@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {Stage, Container} from '@inlet/react-pixi'
+import React, { useState } from 'react'
+import { Stage, Container } from '@inlet/react-pixi'
 import '../../App.css'
 import Background from './Background'
 import Player from './Player'

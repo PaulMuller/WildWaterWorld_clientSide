@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 import React, { useState, useEffect } from 'react'
 import Ping from './Components/Ping/Ping.js'
 import PixiCanvas from './Components/PixiCanvas/PixiCanvas.js'
@@ -9,7 +11,7 @@ import config from './config.json'
 //     fullHost: config.fullHost,
 // })
 
-const io = socketIoClient(config.serverAddress)
+const io = socketIoClient(process.env.serverAddress)
 
 export default () => {
     const [inGame, setInGame] = useState(false)

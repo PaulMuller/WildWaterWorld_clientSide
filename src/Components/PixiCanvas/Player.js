@@ -1,5 +1,5 @@
 import React from 'react'
-import {Sprite} from '@inlet/react-pixi'
+import { Sprite } from '@inlet/react-pixi'
 import boat from '../../media/images/sprites/boat_lvl1.png'
 
 export default props => {

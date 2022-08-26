@@ -1,14 +1,14 @@
 import React from 'react'
-import {Container, Graphics, withFilters} from '@inlet/react-pixi'
+import { Container, Graphics, withFilters } from '@inlet/react-pixi'
 import * as PIXI from 'pixi.js';
-const BlurFilter = withFilters(Container, PIXI.filters.BlurFilter)
+const Filters = withFilters(Container, { blur: PIXI.filters.BlurFilter})
 
 export default props => {
     return (
-        <BlurFilter enable={true} blurFilter={{'blur': 1}}>
+        <Filters enable={true} blurFilter={{'blur': 1}}>
             <Graphics 
                 preventRedraw={true}
-                alpha={0.1}
+                alpha={0.5}
                 cachedTexture = {true} 
                 // ref={ref => props.setMask(ref)} 
                 draw={g => {
@@ -19,7 +19,7 @@ export default props => {
                     g.endHole();
                 }} 
             />
-        </BlurFilter>
+        </Filters>
     )
 
 }

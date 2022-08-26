@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import useInterval from 'use-interval'
-import { Sprite, TilingSprite} from '@inlet/react-pixi'
+import { Sprite, TilingSprite } from '@inlet/react-pixi'
 import water from '../../media/images/sprites/water/water.js'
 import world from '../../media/images/sprites/islands/world.js'
 import waterOne from '../../media/images/sprites/water/water_058_c_0001.jpg'
