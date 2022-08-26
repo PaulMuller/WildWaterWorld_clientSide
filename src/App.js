@@ -1,17 +1,10 @@
-import * as dotenv from 'dotenv'
-dotenv.config()
 import React, { useState, useEffect } from 'react'
 import Ping from './Components/Ping/Ping.js'
 import PixiCanvas from './Components/PixiCanvas/PixiCanvas.js'
 import LoginPage from './Components/LoginPage/LoginPage.js'
 import socketIoClient from 'socket.io-client'
 import config from './config.json'
-// import TronWeb from 'tronweb'
-// const tronWeb = new TronWeb({
-//     fullHost: config.fullHost,
-// })
-
-const io = socketIoClient(process.env.serverAddress)
+const io = socketIoClient(process.env.REACT_APP_serverAddress)
 
 export default () => {
     const [inGame, setInGame] = useState(false)
