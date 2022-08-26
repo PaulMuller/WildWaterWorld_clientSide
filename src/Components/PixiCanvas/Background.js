@@ -6,8 +6,7 @@ import world from '../../media/images/sprites/islands/world.js'
 import waterOne from '../../media/images/sprites/water/water_058_c_0001.jpg'
 
 
-
-export default props => {
+const Background = props => {
     const [waterTexture, setWaterTexture] = useState(waterOne)
     const [counter, setCounter] = useState(1)
     const [delay, setDelay] = useState(1)
@@ -54,3 +53,4 @@ export default props => {
     )
 }
 
+export default Background

@@ -4,7 +4,7 @@ import PixiCanvas from './Components/PixiCanvas/PixiCanvas.js'
 import LoginPage from './Components/LoginPage/LoginPage.js'
 import socketIoClient from 'socket.io-client'
 import config from './config.json'
-const io = socketIoClient(process.env.REACT_APP_serverAddress)
+const io = socketIoClient(process.env.REACT_APP_serverAddress || 'http://127.0.0.1:5000')
 
 export default () => {
     const [inGame, setInGame] = useState(false)

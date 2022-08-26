@@ -10,7 +10,7 @@ import Labels from '../Labels/Labels'
 import FogOfWar from './FogOfWar'
 
 
-export default props => {
+const PixiCanvas = props => {
     // const [mask, setMask] = useState(null)
     const [scaling, setScaling] = useState(1)
     return(
@@ -52,3 +52,5 @@ export default props => {
         </>
     )
 }
+
+export default PixiCanvas

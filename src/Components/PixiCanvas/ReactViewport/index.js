@@ -1,7 +1,7 @@
-import { Viewport } from "pixi-viewport"
-import { PixiComponent } from "@inlet/react-pixi"
+import { Viewport } from 'pixi-viewport'
+import { PixiComponent } from '@inlet/react-pixi'
 
-export default PixiComponent("Viewport", {
+export default PixiComponent('Viewport', {
   create: props => {
     const viewport = new Viewport({
         screenWidth: window.innerWidth,
@@ -15,7 +15,7 @@ export default PixiComponent("Viewport", {
         }
     })
 
-    viewport.on("wheel", e => {
+    viewport.on('wheel', e => {
         if (e.viewport.scaled <= 0.5){
             viewport.setZoom(0.5, true)
         }

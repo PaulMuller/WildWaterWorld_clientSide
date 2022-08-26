@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import '../../App.css'
 
-export default props => {
+const LoginPage = props => {
     const [registerFields, setRegisterFields] = useState({nickName: '', referalAddress: ''})
 
     return (
@@ -47,3 +47,5 @@ export default props => {
         </>
     )
 }
+
+export default LoginPage

@@ -3,7 +3,7 @@ import useInterval from 'use-interval'
 import '../../App.css'
 
 
-export default props => {
+const Ping = props => {
     const [ping, setPing] = useState(NaN)
     const [pingSended, setPingSended] = useState(false)
     const [connection, setConnection] = useState(false)
@@ -23,3 +23,5 @@ export default props => {
 
     return <span className='pingIndicator'>{ connection ? `${ping} ms`: 'not connected'}🌍</span>
 }
+
+export default Ping

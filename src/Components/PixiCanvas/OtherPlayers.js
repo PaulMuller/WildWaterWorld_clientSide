@@ -2,7 +2,7 @@ import React from 'react'
 import { Sprite } from '@inlet/react-pixi'
 import boat from '../../media/images/sprites/boat_lvl1.png'
 
-export default props => {
+const OtherPlayers = props => {
     return(
         <>
             {props.otherVisiblePlayers.map( otherPlayer => (
@@ -17,3 +17,5 @@ export default props => {
         </>
     )
 }
+
+export default OtherPlayers

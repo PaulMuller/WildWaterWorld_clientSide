@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../App.css'
 
-export default props => {
+const Labels = props => {
     return (
         <>
             <div 
@@ -27,3 +27,5 @@ export default props => {
         </>
     )
 }
+
+export default Labels
